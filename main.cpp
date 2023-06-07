@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
     string homedir = getenv("HOME");
-    string filepath = homedir + "/todo";
+    string filepath = homedir + "/todofile";
 
     fstream file;
     file.open(filepath, ios::in);
@@ -29,9 +29,9 @@ int main(int argc, char **argv) {
         }
     }
 
-    if (command == "-a" && value != "") {
+    if ((command == "-a" || command == "add" || command == "a") && value != "") {
         lines.push_back(value);
-    } else if (command == "-c" && value != "") {
+    } else if ((command == "-c" || command == "-d" || command == "remove") && value != "") {
         int index = stoi(value);
         if (index > (int) lines.size() || index < 1) {
             cerr << "Index is out of bounds" << endl;
