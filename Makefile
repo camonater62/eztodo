@@ -1,5 +1,5 @@
 default:
 	clang++ main.cpp -o todo -O3 -Wall -Wextra -pedantic -Werror
 
-clean
+clean:
 	rm -f todo

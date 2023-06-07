@@ -38,6 +38,14 @@ int main(int argc, char **argv) {
             return 0;
         }
         lines.erase(lines.begin() + index - 1);
+    } else if (command == "-h" || command == "help") {
+        cout << "Usage: todo [OPTION] [VALUE]" << endl;
+        cout << "Options:" << endl;
+        cout << "  -a, add, a\t\tAdd a new task" << endl;
+        cout << "  -c, -d, remove\tRemove a task" << endl;
+        cout << "  -v, view, v\t\tView all tasks" << endl;
+        cout << "  -h, help\t\tShow this help message" << endl;
+        return 0;
     }
 
     file.open(filepath, ios::out);
